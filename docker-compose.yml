@@ -1,0 +1,16 @@
+services:
+  gigastt:
+    build:
+      context: .
+      dockerfile: docker/gigastt/Dockerfile
+      args:
+        GIGASTT_VERSION: ${GIGASTT_VERSION:-2.0.9}
+    image: recognition-gigastt:${GIGASTT_VERSION:-2.0.9}
+    container_name: recognition-gigastt
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${GIGASTT_PORT:-9876}:9876"
+    volumes:
+      - ./data/gigastt:/home/gigastt/.gigastt
+    environment:
+      RUST_LOG: info

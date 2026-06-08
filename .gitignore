@@ -1,0 +1,14 @@
+.env
+*.local
+
+data/
+work/
+logs/
+
+*.tmp
+*.part
+*.swp
+*.bak
+
+.DS_Store
+Thumbs.db

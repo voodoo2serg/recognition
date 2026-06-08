@@ -1,0 +1,12 @@
+[Unit]
+Description=Periodic recognition scan for missed Syncthing events
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=2min
+AccuracySec=30s
+Persistent=true
+Unit=recognition-worker.service
+
+[Install]
+WantedBy=timers.target

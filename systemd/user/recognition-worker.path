@@ -1,0 +1,10 @@
+[Unit]
+Description=Watch Syncthing audio input folder
+
+[Path]
+PathChanged=%h/sync/audio_in
+PathModified=%h/sync/audio_in
+Unit=recognition-worker.service
+
+[Install]
+WantedBy=default.target

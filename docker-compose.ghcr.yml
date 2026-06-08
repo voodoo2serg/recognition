@@ -1,0 +1,11 @@
+services:
+  gigastt:
+    image: ${GIGASTT_IMAGE:-ghcr.io/ekhodzitsky/gigastt:latest}
+    container_name: recognition-gigastt
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${GIGASTT_PORT:-9876}:9876"
+    volumes:
+      - ./data/gigastt:/home/gigastt/.gigastt
+    environment:
+      RUST_LOG: info
